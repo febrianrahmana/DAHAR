@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1038800197660",
+    "project_id": "dahar-project",
+    "storage_bucket": "dahar-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038800197660:android:061c645e98d07764fb27d9",
+        "android_client_info": {
+          "package_name": "com.example.dahar_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgoUQH52eIbUzS1vYKXhZLKXW7WD1ZVLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
