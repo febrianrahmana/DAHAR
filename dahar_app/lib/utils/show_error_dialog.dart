@@ -1,22 +1,12 @@
 import 'package:flutter/material.dart';
 
-Future<void> showErrorDialog(
+void showErrorDialog(
   BuildContext context,
   String text,
 ) {
-  return showDialog(
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        title: const Text('Error!'),
-        actions: [
-          TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'))
-        ],
-      );
-    },
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(text),
+    )
   );
 }
