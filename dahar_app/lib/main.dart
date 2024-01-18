@@ -1,5 +1,6 @@
 import 'package:dahar_app/const/routes.dart';
 import 'package:dahar_app/features/login.dart';
+import 'package:dahar_app/features/logout.dart';
 import 'package:dahar_app/features/register.dart';
 import 'package:dahar_app/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -17,7 +18,8 @@ void main() {
     routes: {
       homeRoute: (context) => const Home(),
       registerRoute: (context) => const RegisterView(),
-      loginRoute: (context) => const LoginView()
+      loginRoute: (context) => const LoginView(),
+      logoutRoute: (context) => const LogoutView()
     },
   ));
 }
@@ -68,6 +70,16 @@ class Home extends StatelessWidget {
                               MaterialStatePropertyAll(Colors.grey),
                         ),
                         child: const Text('EXPLORE!')),
+                    TextButton(
+                        onPressed: () => {
+                              Navigator.of(context).pushNamedAndRemoveUntil(
+                                  logoutRoute, (route) => false)
+                            },
+                        style: const ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll(Colors.grey),
+                        ),
+                        child: const Text('LOGOUT'))
                   ],
                 ),
               );

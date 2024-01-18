@@ -1,4 +1,5 @@
 import 'package:dahar_app/const/routes.dart';
+import 'package:dahar_app/utils/show_error_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -29,6 +30,24 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
+    if (FirebaseAuth.instance.currentUser != null) {
+      return Scaffold(
+          appBar: AppBar(
+            title: const Center(child: Text('Already Logged in!')),
+          ),
+          body: Center(
+            child: Column(
+              children: [
+                TextButton(
+                    onPressed: () {
+                      (Navigator.of(context).pushNamedAndRemoveUntil(
+                          homeRoute, (route) => false));
+                    },
+                    child: const Text('OK'))
+              ],
+            ),
+          ));
+    }
     return Scaffold(
         appBar: AppBar(
           title: const Text('Login'),
